@@ -1,0 +1,13 @@
+@import 'constants/styles/colors.scss';
+@import 'constants/styles/sizes.scss';
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+
+
+
+html {
+	background-color: $col-lightest;
+	color: black;
+	font-family: 'Oxygen';
+}
+

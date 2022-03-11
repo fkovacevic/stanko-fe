@@ -1,0 +1,10 @@
+.apartments {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__house-image {
+        width: 500px;
+    }
+}
