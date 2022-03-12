@@ -24,18 +24,18 @@ require('firebase/auth');
 
 
 
-firebase.initializeApp({
-	apiKey: "AIzaSyC6eAX2gJosjg8fQ0DDuZoQUymFj_OpAis",
-	authDomain: "home-net-599d5.firebaseapp.com",
-	projectId: "home-net-599d5",
-	storageBucket: "home-net-599d5.appspot.com",
-	messagingSenderId: "618113681928",
-	appId: "1:618113681928:web:e4c80179321cbcffdc5fbd",
-	measurementId: "G-4C1M60GN5S",
-});
+// firebase.initializeApp({
+// 	apiKey: "AIzaSyC6eAX2gJosjg8fQ0DDuZoQUymFj_OpAis",
+// 	authDomain: "home-net-599d5.firebaseapp.com",
+// 	projectId: "home-net-599d5",
+// 	storageBucket: "home-net-599d5.appspot.com",
+// 	messagingSenderId: "618113681928",
+// 	appId: "1:618113681928:web:e4c80179321cbcffdc5fbd",
+// 	measurementId: "G-4C1M60GN5S",
+// });
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+// const auth = firebase.auth();
+// const firestore = firebase.firestore();
 
 interface Apartment {
 	id: string;
@@ -62,10 +62,10 @@ function App() {
 	// 	const provider = new firebase.auth.GoogleAuthProvider();
 	// 	auth.signInWithPopup(provider).then((user) => console.log(user.user?.displayName));
 	// }
-	const apartmentsRef = firestore.collection('apartments');
-	const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
-	const [apartments, isLoading, error] = useCollection(collection(firestore, 'apartments'));
-	console.log(apartments?.docs.forEach((value) => console.log(value.data())));
+	// const apartmentsRef = firestore.collection('apartments');
+	// const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
+	// const [apartments, isLoading, error] = useCollection(collection(firestore, 'apartments'));
+	// console.log(apartments?.docs.forEach((value) => console.log(value.data())));
 
 	// console.log(auth.currentUser)
 	
