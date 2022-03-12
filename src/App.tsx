@@ -14,7 +14,7 @@ import ApartmentMap from './pages/ApartmentMap/index';
 import NavigationBar from 'common/components/NavigationBar';
 
 
-import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 
