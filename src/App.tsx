@@ -62,13 +62,13 @@ function App() {
 	// 	const provider = new firebase.auth.GoogleAuthProvider();
 	// 	auth.signInWithPopup(provider).then((user) => console.log(user.user?.displayName));
 	// }
-	const apartmentsRef = firestore.collection('apartments');
-	const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
-	const [apartments, isLoading, error] = useCollection(collection(firestore, 'apartments'));
-	console.log(apartments?.docs.forEach((value) => console.log(value.data())));
+	// const apartmentsRef = firestore.collection('apartments');
+	// const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
+	// const [apartments, isLoading, error] = useCollection(collection(firestore, 'apartments'));
+	// console.log(apartments?.docs.forEach((value) => console.log(value.data())));
 
 	// console.log(auth.currentUser)
-	
+
 	return (
 		<BrowserRouter>
 			<NavigationBar></NavigationBar>

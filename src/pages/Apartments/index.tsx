@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 
+import { getApartments } from 'services/ApartmentsService';
 import './_apartments.scss';
 
 const Apartments = () => {
+    useEffect(() => {
+        getApartments();
+    }, [])
     return (
         <div>
             <Grid container>
