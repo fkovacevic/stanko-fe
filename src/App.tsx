@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import 'app.scss';
+import './app.scss';
 
 import { collection, getFirestore } from '@firebase/firestore'
 
