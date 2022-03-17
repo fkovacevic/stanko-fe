@@ -1,0 +1,13 @@
+@import '../../../../constants/styles/colors';
+@import '../../../../constants/styles/sizes';
+
+.tag {
+    color: white;
+    font-size: $font-size-s;
+    background-color: #064663;
+    text-transform: uppercase;
+    border-radius: $border-radius-s;
+    margin-left: 15%;
+    margin-top: $margin-s;
+    padding: $padding-xs;
+}

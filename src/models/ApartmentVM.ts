@@ -1,14 +1,15 @@
 import firebase from 'firebase/compat/app';
+import { format } from 'date-fns'
 
 
-enum Tag {
+export enum Tag {
 	PET_FRIENDLY = 'Pet-friendly',
 	SMOKING_ALLOWED = 'Pušenje dozvoljeno',
 	NEAR_STATION = 'Blizina stanice',
 	PARKING_SLOT = 'Parking mjesto',
 }
 
-enum PartOfTown {
+export enum PartOfTown {
 	TRESNJEVKA = 'Trešnjevka',
 	KNEZIJA = 'Knežija',
 	DUBRAVA = 'Dubrava',
@@ -31,7 +32,8 @@ class ApartmentVM {
 	partOfTown: PartOfTown;
 	street: string;
 	streetNumber: number;
-	description: string;
+	description?: string;
+	images: string[];
 	tags: Tag[];
 	area: number;
 	createdAt: string;
@@ -51,6 +53,7 @@ class ApartmentVM {
 			street,
 			streetNumber,
 			description,
+			images,
 			tags,
 			area,
 			createdAt,
@@ -67,14 +70,15 @@ class ApartmentVM {
 		this.street = street;
 		this.streetNumber = streetNumber;
 		this.description = description;
+		this.images = images;
 		this.tags = tags as Tag[];
 		this.area = area;
-		this.createdAt = createdAt;
+		this.createdAt = ApartmentVM.secondsToDateFormat(createdAt.seconds);
 		this.price = price;
 		this.contactNumber = contactNumber;
 		this.roomCount = roomCount;
 		this.bathroomCount = bathroomCount;
-		this.availableFrom = availableFrom;
+		this.availableFrom = ApartmentVM.secondsToDateFormat(availableFrom.seconds);
 	}
 
 
@@ -92,6 +96,12 @@ class ApartmentVM {
 
 			return new ApartmentVM({ id: snapshot.id, data });
 		  }
+	}
+
+	static secondsToDateFormat = (seconds: number) => {
+		const availableFromDate = new Date(1970, 0, 1);
+    	availableFromDate.setSeconds(seconds);
+		return format(availableFromDate, 'dd.M.yyyy.');
 	}
 
 }
