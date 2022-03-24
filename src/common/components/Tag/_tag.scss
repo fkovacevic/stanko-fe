@@ -1,10 +1,10 @@
-@import '../../../../constants/styles/colors';
-@import '../../../../constants/styles/sizes';
+@import '../../../constants/styles/colors';
+@import '../../../constants/styles/sizes';
 
 .tag {
     color: white;
     font-size: $font-size-s;
-    background-color: #064663;
+    background-color: $col-blue;
     text-transform: uppercase;
     border-radius: $border-radius-s;
     margin-left: 15%;

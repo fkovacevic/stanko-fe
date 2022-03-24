@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import { Paper, Button } from '@mui/material'
+
 import Carousel from 'react-material-ui-carousel'
 import { FaBath, FaBed } from 'react-icons/fa'
 import { BiCurrentLocation } from 'react-icons/bi'
@@ -9,18 +9,24 @@ import { RiMoneyEuroBoxFill } from 'react-icons/ri'
 
 import ApartmentVM from 'models/ApartmentVM';
 import './_apartmentCard.scss';
-import Tag from './Tag';
+import Tag from '../../../common/components/Tag';
 
 
 interface Props {
 	apartment: ApartmentVM;
+	onClick: (apartment: ApartmentVM) => void;
 }
 
 const ApartmentCard = (props: Props) => {
-	const { apartment: { images, area, bathroomCount, roomCount, price, partOfTown, tags } } = props;
+	const { apartment, onClick } = props;
+	const { images, area, bathroomCount, roomCount, price, partOfTown, tags } = apartment;
+
+	function onCardClick() {
+		onClick(apartment);
+	}
 	return (
 		<Grid xs={6} item className='apartment-card-container'>
-			<div className='apartment-card'>
+			<div className='apartment-card' onClick={onCardClick}>
 				<div className='apartment-card__carousel-wrapper'>
 					<Carousel autoPlay={false} IndicatorIcon={true} className='apartment-card__carousel' navButtonsAlwaysVisible>
 						{images.map((image, index) => <img key={index} src={image} alt={`img${index}`} className='apartment-card__carousel__image' />)}

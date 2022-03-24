@@ -1,0 +1,13 @@
+@import '../../../../constants/styles/colors';
+@import '../../../../constants/styles/sizes';
+
+.info-tab {
+    height: 60vh;
+    padding: $padding-l;
+    &__highlights {
+        padding: $padding-m;
+        margin: $margin-l 0 0 $margin-l;
+        font-weight: 700;
+    }
+
+}

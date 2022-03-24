@@ -1,0 +1,13 @@
+@import '../../../constants/styles/sizes';
+@import '../../../constants/styles/colors';
+
+
+.loading-apartment-container {
+    padding: $padding-m;
+    color: $col-light;
+}
+
+.loading-apartment {
+    background-color: $col-light;
+    height: 32vh;
+}
