@@ -26,13 +26,38 @@ const InfoTab = (props: Props) => {
                 Generalno
             </Grid>
             <Grid item xs={6} className='info-tab__highlight-item'>
-                <BsFillHouseFill />
-                <span>{area}m2</span>
+                •{partOfTown}
             </Grid>
             <Grid item xs={6} className='info-tab__highlight-item'>
-                <RiMoneyEuroBoxFill />
+                <span>{`•${street} ${streetNumber}`}</span>
+            </Grid>
+            <Grid item xs={6} className='info-tab__highlight-item'>
+                <span>•{area}m2</span>
+            </Grid>
+            <Grid item xs={6} className='info-tab__highlight-item'>
                 <span>
-                    {price}
+                    •{price}€
+                </span>
+            </Grid>
+            <Grid xs={6} item className='info-tab__highlight-item'>
+                <span>
+                    {roomCount}x <FaBed />
+                </span>
+                <span>
+                    {bathroomCount}x <FaBath />
+                </span>
+            </Grid>
+            <Grid xs={6} item className='info-tab__highlight-item'>
+                <span>
+                    {`Dostupno od: ${availableFrom}`}
+                </span>
+            </Grid>
+            <Grid item xs={12} className='info-tab__highlights'>
+                Opis
+            </Grid>
+            <Grid xs={12} item className='info-tab__highlight-item'>
+                <span>
+                    {description}
                 </span>
             </Grid>
         </Grid>

@@ -3,11 +3,24 @@
 
 .info-tab {
     height: 60vh;
+    overflow-y: auto;
     padding: $padding-l;
     &__highlights {
-        padding: $padding-m;
-        margin: $margin-l 0 0 $margin-l;
+        margin-left: $margin-l;
+        margin-top: $margin-l;
+        font-size: $font-size-l;
         font-weight: 700;
+        text-decoration: underline;
+
+    }
+    &__highlight-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        padding: $padding-l;
+        &--full-row {
+
+        }
     }
 
 }
