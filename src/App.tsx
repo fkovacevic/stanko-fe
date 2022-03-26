@@ -68,7 +68,7 @@ function App() {
 	// console.log(apartments?.docs.forEach((value) => console.log(value.data())));
 
 	// console.log(auth.currentUser)
-	
+
 	return (
 		<BrowserRouter>
 			<NavigationBar></NavigationBar>

@@ -1,10 +1,40 @@
+@import '../../constants/styles/colors';
+@import '../../constants/styles/sizes';
+
 .apartments {
+    &__header {
+        display: flex;
+        align-items: start;
+        padding: $padding-l $padding-l 0 $padding-l;
+        margin-bottom: $margin-l;
+        max-height: 5%;
+        color: grey;
+    }
+    &__filter {
+        .MuiButton-label {
+            color: $col-special;
+            font-size: $font-size-m;
+            text-transform: initial;
+        }
+        &__icon {
+            margin-left: $margin-m;
+            font-size: $font-size-m;
+            color: $col-special;
+        }
+    }
     &__container {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-left: $padding-xl;
+        padding-right: $padding-xl;
     }
-    &__house-image {
-        width: 500px;
+    &__list {
+        height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .MuiGrid-grid-xs-6 {
+            margin-bottom: $margin-l;
+        }
     }
 }

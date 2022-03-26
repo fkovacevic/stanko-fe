@@ -1,0 +1,23 @@
+@import '../../../../constants/styles/colors';
+@import '../../../../constants/styles/sizes';
+
+.info-tab {
+    height: 60vh;
+    overflow-y: auto;
+    padding: $padding-l;
+    &__highlights {
+        margin-left: $margin-l;
+        margin-top: $margin-l;
+        font-size: $font-size-l;
+        font-weight: 700;
+        text-decoration: underline;
+
+    }
+    &__highlight-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        padding: $padding-l;
+    }
+
+}

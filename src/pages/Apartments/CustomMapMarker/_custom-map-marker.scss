@@ -1,0 +1,25 @@
+@import '../../../constants/styles/colors';
+@import '../../../constants/styles/sizes';
+
+.custom-map-marker {
+    background-color: $col-blue;
+    color: white;
+    padding: $padding-xs;
+    border-radius: $border-radius-s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: $font-size-s;
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 0px;
+        bottom: -2px;
+        left: 9px;
+        border: 10px solid transparent;
+        border-top: 17px solid $col-blue;
+      }
+}
+
