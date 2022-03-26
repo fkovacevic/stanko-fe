@@ -14,6 +14,87 @@ import ApartmentModal from './ApartmentModal';
 import CustomMapMarker from './CustomMapMarker';
 import './_apartments.scss';
 
+
+const array1 = [{
+    "id": "0xmcluXUoaAdwyVs93VU",
+    "title": "Ugodan stan na Trešnjevci",
+    "coordinates": {
+        "lat": 45.905923,
+        "lng": 15.951908
+    },
+    "partOfTown": "Trešnjevka",
+    "street": "Nova cesta",
+    "streetNumber": 27,
+    "description": "POGODNOST:  temeljem Ugovora o najmu stana najmoprimac može kupiti mjesečnu povlaštenu parkirališnu kartu samo za 75,00 kuna s kojom može parkirati u cijelom Zagrebu neograničeno, u drugoj i trećoj naplatnoj zoni. - NAJMOPRIMAC NE PLAĆA RAČUN ZA PRIČUVU  STAN SE SASTOJI od ulaznog prostora zaštićenog protuprovalnim vratima, atraktivne, zasebne kuhinje sa šankom, atraktivno novonamještenog i prostranog dnevnog boravka s blagovaonicom u jednoj funkcionalnoj cjelini, vrlo prostrane i atraktivne spavaće sobe s bračnim ležajem i garderobnim ormarom i kupaonice s tuš kabinom i WC-om.  Grijanje je centralno etažno plinsko.  U stanu su ugrađena zasebna brojila za očitavanje utroška struje i plina - plaćanje režija prema stvarnoj, kontroliranoj potrošnji.",
+    "images": [
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/1b6c5546-2bab-4fcc-b958-653fc4fccee4.jpeg?alt=media&token=a8fed172-f048-40c2-929f-0bdff5386e4d",
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/267262611.jpeg?alt=media&token=bf82b434-4791-49db-b530-8c6f1bd3b7eb"
+    ],
+    "tags": [
+        "Pet-friendly",
+        "Blizina stanice"
+    ],
+    "area": 69,
+    "createdAt": "11.3.2022.",
+    "price": 500,
+    "contactNumber": "0998765432",
+    "roomCount": 2,
+    "bathroomCount": 1,
+    "availableFrom": "10.3.2022."
+}, {
+    "id": "0xmcluXUoaAdwyVs93VU",
+    "title": "Ugodan stan na Trešnjevci",
+    "coordinates": {
+        "lat": 45.905293,
+        "lng": 15.951378
+    },
+    "partOfTown": "Trešnjevka",
+    "street": "Nova cesta",
+    "streetNumber": 27,
+    "description": "POGODNOST:  temeljem Ugovora o najmu stana najmoprimac može kupiti mjesečnu povlaštenu parkirališnu kartu samo za 75,00 kuna s kojom može parkirati u cijelom Zagrebu neograničeno, u drugoj i trećoj naplatnoj zoni. - NAJMOPRIMAC NE PLAĆA RAČUN ZA PRIČUVU  STAN SE SASTOJI od ulaznog prostora zaštićenog protuprovalnim vratima, atraktivne, zasebne kuhinje sa šankom, atraktivno novonamještenog i prostranog dnevnog boravka s blagovaonicom u jednoj funkcionalnoj cjelini, vrlo prostrane i atraktivne spavaće sobe s bračnim ležajem i garderobnim ormarom i kupaonice s tuš kabinom i WC-om.  Grijanje je centralno etažno plinsko.  U stanu su ugrađena zasebna brojila za očitavanje utroška struje i plina - plaćanje režija prema stvarnoj, kontroliranoj potrošnji.",
+    "images": [
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/1b6c5546-2bab-4fcc-b958-653fc4fccee4.jpeg?alt=media&token=a8fed172-f048-40c2-929f-0bdff5386e4d",
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/267262611.jpeg?alt=media&token=bf82b434-4791-49db-b530-8c6f1bd3b7eb"
+    ],
+    "tags": [
+        "Pet-friendly",
+        "Blizina stanice"
+    ],
+    "area": 69,
+    "createdAt": "11.3.2022.",
+    "price": 500,
+    "contactNumber": "0998765432",
+    "roomCount": 2,
+    "bathroomCount": 1,
+    "availableFrom": "10.3.2022."
+}, {
+    "id": "0xmcluXUoaAdwyVs93VU",
+    "title": "Ugodan stan na Trešnjevci",
+    "coordinates": {
+        "lat": 45.905993,
+        "lng": 15.951978
+    },
+    "partOfTown": "Trešnjevka",
+    "street": "Nova cesta",
+    "streetNumber": 27,
+    "description": "POGODNOST:  temeljem Ugovora o najmu stana najmoprimac može kupiti mjesečnu povlaštenu parkirališnu kartu samo za 75,00 kuna s kojom može parkirati u cijelom Zagrebu neograničeno, u drugoj i trećoj naplatnoj zoni. - NAJMOPRIMAC NE PLAĆA RAČUN ZA PRIČUVU  STAN SE SASTOJI od ulaznog prostora zaštićenog protuprovalnim vratima, atraktivne, zasebne kuhinje sa šankom, atraktivno novonamještenog i prostranog dnevnog boravka s blagovaonicom u jednoj funkcionalnoj cjelini, vrlo prostrane i atraktivne spavaće sobe s bračnim ležajem i garderobnim ormarom i kupaonice s tuš kabinom i WC-om.  Grijanje je centralno etažno plinsko.  U stanu su ugrađena zasebna brojila za očitavanje utroška struje i plina - plaćanje režija prema stvarnoj, kontroliranoj potrošnji.",
+    "images": [
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/1b6c5546-2bab-4fcc-b958-653fc4fccee4.jpeg?alt=media&token=a8fed172-f048-40c2-929f-0bdff5386e4d",
+        "https://firebasestorage.googleapis.com/v0/b/home-net-599d5.appspot.com/o/267262611.jpeg?alt=media&token=bf82b434-4791-49db-b530-8c6f1bd3b7eb"
+    ],
+    "tags": [
+        "Pet-friendly",
+        "Blizina stanice"
+    ],
+    "area": 69,
+    "createdAt": "11.3.2022.",
+    "price": 500,
+    "contactNumber": "0998765432",
+    "roomCount": 2,
+    "bathroomCount": 1,
+    "availableFrom": "10.3.2022."
+}]
+
 const loadingSkeletons = Array.apply(null, Array(4)).map((_,i) => i);
 
 const Apartments = () => {

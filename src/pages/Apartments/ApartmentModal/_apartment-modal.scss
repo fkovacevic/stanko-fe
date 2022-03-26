@@ -1,6 +1,7 @@
 @import '../../../constants/styles/colors';
 @import '../../../constants/styles/sizes';
 
+$col-whatsapp: #075e54;
 .apartment-modal {
     background-color: $col-lighter;
     &__header {
@@ -27,5 +28,8 @@
         width: 100%;
         height: 60vh;
         overflow-y: auto;
+    }
+    &__whatsapp-button {
+       color: blue;
     }
 }

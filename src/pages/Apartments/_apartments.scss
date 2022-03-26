@@ -31,7 +31,7 @@
     }
     &__list {
         height: 80vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
         .MuiGrid-grid-xs-6 {
             margin-bottom: $margin-l;

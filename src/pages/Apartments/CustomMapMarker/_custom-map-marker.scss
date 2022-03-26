@@ -11,5 +11,15 @@
     align-items: center;
     font-weight: 700;
     font-size: $font-size-s;
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 0px;
+        bottom: -2px;
+        left: 9px;
+        border: 10px solid transparent;
+        border-top: 17px solid $col-blue;
+      }
 }
 
