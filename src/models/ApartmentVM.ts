@@ -9,11 +9,13 @@ export enum Tag {
 	PARKING_SLOT = 'Parking mjesto',
 }
 
-export enum PartOfTown {
-	TRESNJEVKA = 'Trešnjevka',
-	KNEZIJA = 'Knežija',
-	DUBRAVA = 'Dubrava',
+export const PartOfTown: Record<string, string> = {
+	TRESNJEVKA:'Trešnjevka',
+	KNEZIJA: 'Knežija',
+	DUBRAVA: 'Dubrava',
 }
+
+export const partsOfTown = Object.keys(PartOfTown).map((key) => PartOfTown[key]);
 
 interface Coordinate {
 	lat: number;
@@ -29,7 +31,7 @@ class ApartmentVM {
 	id: string;
 	title: string;
 	coordinates: Coordinate;
-	partOfTown: PartOfTown;
+	partOfTown: typeof PartOfTown;
 	street: string;
 	streetNumber: number;
 	description?: string;
