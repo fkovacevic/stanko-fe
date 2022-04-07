@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, Button, ButtonGroup, Popover, Paper, MenuItem, MenuList } from '@material-ui/core';
 import { HiOfficeBuilding } from 'react-icons/hi';
 import {  GiHamburgerMenu } from 'react-icons/gi';
@@ -6,7 +7,7 @@ import {  GiHamburgerMenu } from 'react-icons/gi';
 
 import './_navigation-bar.scss';
 
-const MOBILE_WIDTH_THRESHOLD = 1000; // px
+const MOBILE_WIDTH_THRESHOLD = 1000;// px
 
 const NavigationBar = () => {
     const [mobileMode, setMobileMode] = useState<boolean>(window.innerWidth < MOBILE_WIDTH_THRESHOLD);
@@ -62,18 +63,24 @@ const NavigationBar = () => {
                         >
                              <Paper >
                                 <MenuList className="navigation-bar__menu__popover">
-                                    <MenuItem >stanovi</MenuItem>
-                                    <MenuItem>obavijesti</MenuItem>
-                                    <MenuItem>oglasi</MenuItem>
+                                    <MenuItem component={Link} to='stanovi'>stanovi</MenuItem>
+                                    <MenuItem component={Link} to='/obavijesti'>obavijesti</MenuItem>
+                                    <MenuItem component={Link} to='/oglasi'>oglasi</MenuItem>
                                 </MenuList>
                             </Paper>
                         </Popover>
                     </div>
                     :
-                    <ButtonGroup variant="outlined" aria-label="text button group" className="navigation-bar__options">
-                        <Button className='navigation-bar__hover-animation'>Stanovi</Button>
-                        <Button className='navigation-bar__hover-animation'>Obavijesti</Button>
-                        <Button className='navigation-bar__hover-animation'>Oglasi</Button>
+                    <ButtonGroup variant="outlined" aria-label="text button group">
+                        <Link to='/stanovi' style={{ 'textDecoration': 'none' }}>
+                            <Button className='navigation-bar__button navigation-bar__hover-animation' >Stanovi</Button>
+                        </Link>
+                        <Link to='/obavijesti' style={{ 'textDecoration': 'none' }}>
+                            <Button className='navigation-bar__button navigation-bar__hover-animation'>Obavijesti</Button>
+                        </Link>
+                        <Link to='/oglasi' style={{ 'textDecoration': 'none' }}>
+                            <Button className='navigation-bar__button navigation-bar__hover-animation'>Oglasi</Button>
+                        </Link>
                     </ButtonGroup>
                 }
             </Grid>

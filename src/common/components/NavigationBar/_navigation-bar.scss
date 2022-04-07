@@ -18,17 +18,12 @@
         margin-left: $margin-l;
         font-weight: bold;
     }
-    &__options > button {
-        text-transform: lowercase;
-        font-size: $font-size-m;
-        margin-right: $margin-l;
-        border: 0px;
-    }
-    &__options > button:hover {
-        background-color: $col-lightest;
-    }
-    &__options > button::after{
-        background-color: $col-special;
+    &__button {
+        .MuiButton-label {
+            text-transform: lowercase;
+            font-size: $font-size-m;
+            text-decoration: none;
+        }
     }
 
     &__hover-animation {
@@ -48,8 +43,8 @@
         transition: transform 0.25s ease-out;
       }
     &__hover-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
     &__menu {
         display: flex;
