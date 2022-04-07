@@ -111,6 +111,15 @@ const Apartments = () => {
         setCurrentOpenedApartment(apartment);
     }
 
+    function openApartmentModalFromMarker(id: string) {
+        return () => {
+            const apartment = apartments.find((apartment) => apartment.id === id);
+            if (apartment) {
+                openApartmentModal(apartment);
+            }
+        }
+    }
+
     useEffect(() => {
         async function fetchData() {
             const fetchedApartments = await getApartments();
@@ -122,7 +131,7 @@ const Apartments = () => {
     }, [])
 
     useEffect(() => {
-        setMarkers(apartments.map(({ coordinates: { lat, lng }, price }) => ({ position: [lat, lng], price })));
+        setMarkers(apartments.map(({ id, coordinates: { lat, lng }, price }) => ({ id, position: [lat, lng], price })));
     }, [apartments]);
     return (
         <Grid container className='apartments__container'>
@@ -146,7 +155,7 @@ const Apartments = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    {markers?.map(({ position, price}) => {
+                    {markers?.map(({ id, position, price }) => {
                         const divIcon = new DivIcon({
                             className: '',
                             html: ReactDOMServer.renderToString(<CustomMapMarker price={price}/>),
@@ -154,7 +163,9 @@ const Apartments = () => {
                             iconAnchor: [12, 40],
                             popupAnchor: [0, -40],
                         });
-                       return <Marker position={position} icon={divIcon}/>
+                       return <Marker position={position} icon={divIcon}  eventHandlers={{
+                        click: openApartmentModalFromMarker(id),
+                      }}/>
                     })}
                 </MapContainer>
             </Grid>
