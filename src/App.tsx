@@ -9,7 +9,7 @@ import './app.scss';
 import { collection, getFirestore } from '@firebase/firestore'
 
 import Apartments from './pages/Apartments/index';
-import ApartmentMap from './pages/ApartmentMap/index';
+import ApartmentMap from './pages/Notifications/index';
 
 import NavigationBar from 'common/components/NavigationBar';
 
@@ -74,7 +74,7 @@ function App() {
 			<NavigationBar></NavigationBar>
 			<Routes>
 				<Route path="/stanovi" element={<Apartments />} />
-				<Route path="/karta" element={<ApartmentMap />} />
+				<Route path="/obavijesti" element={<ApartmentMap />} />
 			</Routes>
 		</BrowserRouter>
 
