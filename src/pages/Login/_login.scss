@@ -1,0 +1,61 @@
+@import '../../constants/styles/colors';
+@import '../../constants/styles/sizes';
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 8px) ;
+    background-image: url('./static/blob-background-stanko.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    &__stanko {
+        font-size: $font-size-xl;
+        font-weight: bold;
+    }
+    &__stanko-image {
+        height: 256px;
+        width: 256px;
+    }
+    &__form {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &__input {
+            width: 300px;
+            margin-top: $margin-l;
+        }
+        &__input-icon {
+            color: black;
+        }
+        &__or {
+            font-weight: bold;
+            font-size: $font-size-l;
+            padding: $padding-l;
+        }
+        &__button-wrapper {
+            > button {
+                background-color: white;
+                margin-top: $margin-m;
+                &:hover {
+                    background-color: $col-special;
+                }
+            }
+        }
+        &__facebook-icon {
+            color: #4267B2;
+        }
+        &__button {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 300px;
+            .MuiButton-label {
+                font-size: $font-size-m;
+                text-transform: initial;
+            }
+        }
+    }
+}

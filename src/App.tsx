@@ -9,13 +9,14 @@ import './app.scss';
 import { collection, getFirestore } from '@firebase/firestore'
 
 import Apartments from './pages/Apartments/index';
-import ApartmentMap from './pages/Notifications/index';
+import Notifications from './pages/Notifications/index';
 
 import NavigationBar from 'common/components/NavigationBar';
 
 
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import Login from 'pages/Login';
 
 
 require('firebase/auth');
@@ -71,10 +72,11 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<NavigationBar></NavigationBar>
+			{/* <NavigationBar></NavigationBar> */}
 			<Routes>
-				<Route path="/stanovi" element={<Apartments />} />
-				<Route path="/obavijesti" element={<ApartmentMap />} />
+				<Route path='/stanovi' element={<Apartments />} />
+				<Route path='/obavijesti' element={<Notifications />} />
+				<Route path='/prijava' element={<Login />} />
 			</Routes>
 		</BrowserRouter>
 
