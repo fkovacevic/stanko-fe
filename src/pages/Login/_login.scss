@@ -3,7 +3,7 @@
 
 .login {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     height: calc(100vh - 8px) ;
@@ -15,9 +15,23 @@
         font-size: $font-size-xl;
         font-weight: bold;
     }
+    &__stanko-logo {
+        padding: $padding-xl;
+        > span > img {
+            height: 30px;
+            margin-left: $margin-l;
+        }
+    }
     &__stanko-image {
         height: 256px;
         width: 256px;
+    }
+    &__form-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     &__form {
         width: 50%;
