@@ -1,0 +1,1 @@
+import { clientsClaim } from 'workbox-core'
