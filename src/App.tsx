@@ -1,9 +1,12 @@
 
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import AuthorizationContext from './context';
+
+import RequireAuth from 'common/hocs/RequireAuth';
 import './app.scss';
 
 import { collection, getFirestore } from '@firebase/firestore'
@@ -17,6 +20,8 @@ import NavigationBar from 'common/components/NavigationBar';
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Login from 'pages/Login';
+import { firebaseAuth } from './firebase';
+import Homepage from 'pages/Homepage';
 
 
 require('firebase/auth');
@@ -67,15 +72,23 @@ function App() {
 	// const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
 	// const [apartments, isLoading, error] = useCollection(collection(firestore, 'apartments'));
 	// console.log(apartments?.docs.forEach((value) => console.log(value.data())));
-
-	// console.log(auth.currentUser)
+	const { user } = useContext(AuthorizationContext);
 
 	return (
 		<BrowserRouter>
-			{/* <NavigationBar></NavigationBar> */}
+				{user && <NavigationBar />}
 			<Routes>
-				<Route path='/stanovi' element={<Apartments />} />
-				<Route path='/obavijesti' element={<Notifications />} />
+				<Route path='/' element={<Homepage />}/>
+				<Route path='/stanovi' element={
+					<RequireAuth>
+						<Apartments />
+					</RequireAuth>
+				}/>
+				<Route path='/obavijesti' element={
+					<RequireAuth>
+						<Notifications />
+					</RequireAuth>
+				} />
 				<Route path='/prijava' element={<Login />} />
 			</Routes>
 		</BrowserRouter>

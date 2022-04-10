@@ -17,6 +17,13 @@
         font-size: $font-size-l;
         margin-left: $margin-l;
         font-weight: bold;
+        > img {
+            height: 30px;
+        }
+    }
+    &__stanko-image {
+        height: 32px;
+        width: 32px;
     }
     &__button {
         .MuiButton-label {
@@ -24,6 +31,7 @@
             font-size: $font-size-m;
             text-decoration: none;
         }
+        border: 0;
     }
 
     &__hover-animation {
@@ -45,6 +53,9 @@
     &__hover-animation:hover:after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+    &__log-out-button {
+        color: $col-red;
     }
     &__menu {
         display: flex;
