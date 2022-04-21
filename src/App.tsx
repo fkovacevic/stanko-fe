@@ -13,6 +13,8 @@ import { collection, getFirestore } from '@firebase/firestore'
 
 import Apartments from './pages/Apartments/index';
 import Notifications from './pages/Notifications/index';
+import Homepage from './pages/Homepage';
+import MyApartments from './pages/MyApartments';
 
 import NavigationBar from 'common/components/NavigationBar';
 
@@ -21,7 +23,6 @@ import NavigationBar from 'common/components/NavigationBar';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Login from 'pages/Login';
 import { firebaseAuth } from './firebase';
-import Homepage from 'pages/Homepage';
 
 
 require('firebase/auth');
@@ -87,6 +88,11 @@ function App() {
 				<Route path='/obavijesti' element={
 					<RequireAuth>
 						<Notifications />
+					</RequireAuth>
+				} />
+				<Route path='/oglasi' element={
+					<RequireAuth>
+						<MyApartments />
 					</RequireAuth>
 				} />
 				<Route path='/prijava' element={<Login />} />
