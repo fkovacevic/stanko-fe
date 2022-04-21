@@ -39,7 +39,7 @@ const NavigationBar = () => {
     }, []);
 
     return (
-        <Grid container spacing={2} className='navigation-bar'>
+        <Grid container className='navigation-bar'>
             <Grid item xs={8} className='navigation-bar__logo-wrapper'>
                 <span className="navigation-bar__stanko">
                     <img src="stanko.svg" alt="stanko" />
