@@ -5,6 +5,20 @@ import { IoMdSave } from 'react-icons/io';
 import { PartOfTown, partsOfTown } from 'models/ApartmentVM'
 import './_notifications.scss';
 
+function renderPriceLabel(value: number) {
+	return <div>{`${value}€`}</div>;
+}
+
+function renderAreaLabel (value: number) {
+	return <div>{`${value}`}</div>
+}
+function renderPriceAiaLabel() {
+	return 'Cijena';
+}
+
+function renderAreaAriaLabel() {
+	return 'Površina';
+}
 
 
 
@@ -20,31 +34,16 @@ const Notifications = () => {
 	}
 
 	function handlePriceRange(event: any, newValue: any) {
-		console.log("handleChange2 newValue", newValue);
 		setMinPrice(newValue[0]);
 		setMaxPrice(newValue[1]);
 	};
 
 	function handleAreaRange(event: any, newValue: any) {
-		console.log("handleChange2 newValue", newValue);
 		setMinArea(newValue[0]);
 		setMaxArea(newValue[1]);
 	};
 
-	function renderPriceLabel(value: number) {
-		return <div>{`${value}€`}</div>;
-	}
 
-	function renderAreaLabel (value: number) {
-		return <div>{`${value}`}</div>
-	}
-	function renderPriceAiaLabel() {
-		return 'Cijena';
-	}
-
-	function renderAreaAriaLabel() {
-		return 'Površina';
-	}
 	return (
 		<div className='notifications-container'>
 			<div className='notifications'>
