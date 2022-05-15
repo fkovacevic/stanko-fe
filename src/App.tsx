@@ -14,7 +14,7 @@ import { collection, getFirestore } from '@firebase/firestore'
 import Apartments from './pages/Apartments/index';
 import Notifications from './pages/Notifications/index';
 import Homepage from './pages/Homepage';
-import MyApartments from './pages/MyApartments';
+import MyApartments from './pages/UserApartments';
 
 import NavigationBar from 'common/components/NavigationBar';
 
@@ -77,9 +77,9 @@ function App() {
 
 	return (
 		<BrowserRouter>
-				{user && <NavigationBar />}
+			{user && <NavigationBar />}
 			<Routes>
-				<Route path='/' element={<Homepage />}/>
+				<Route path={`/`} element={<Homepage />}/>
 				<Route path='/stanovi' element={
 					<RequireAuth>
 						<Apartments />
@@ -90,12 +90,12 @@ function App() {
 						<Notifications />
 					</RequireAuth>
 				} />
-				<Route path='/oglasi' element={
+				<Route path={`/oglasi`} element={
 					<RequireAuth>
 						<MyApartments />
 					</RequireAuth>
 				} />
-				<Route path='/prijava' element={<Login />} />
+				<Route path='*' element={<Login />} />
 			</Routes>
 		</BrowserRouter>
 
