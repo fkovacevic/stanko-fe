@@ -1,0 +1,40 @@
+@import '../../constants/styles/colors';
+@import '../../constants/styles/sizes';
+
+.user-apartments {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    &__title {
+		padding: $padding-l;
+		color: black;
+		font-size: $font-size-xxl;
+		padding-left: 10%;
+	}
+	&__list-container {
+		margin-top: 5%;
+		width: 70%;
+	}
+	&__fab-icon {
+		font-size: $font-size-xl;
+		color: white;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.user-apartments {
+		font-size: $font-size-s;
+		&__title {
+			font-size: $font-size-xl;
+			padding-left: 5%;
+		}
+		&__list-container {
+			width: 90%;
+		}
+		&__fab-icon {
+			font-size: $font-size-xl;
+			color: white;
+		}
+	}
+}
