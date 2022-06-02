@@ -3,6 +3,9 @@
 
 .navigation-bar {
     padding: $padding-xl;
+    &--homepage {
+        background-color: $col-blue;
+    }
     &__logo-wrapper {
         display: flex;
         align-items: center;
@@ -32,6 +35,11 @@
             text-decoration: none;
         }
         border: 0;
+    }
+    &--button-homepage {
+        .MuiButton-label {
+            color: white;
+        }
     }
 
     &__hover-animation {
