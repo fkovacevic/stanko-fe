@@ -1,13 +1,16 @@
 import firebase from 'firebase/compat/app';
 import { format } from 'date-fns'
+import { ApartmentServiceModel } from './ApartmentServiceModel';
 
 
-export enum Tag {
-	PET_FRIENDLY = 'Pet-friendly',
-	SMOKING_ALLOWED = 'Pušenje dozvoljeno',
-	NEAR_STATION = 'Blizina stanice',
-	PARKING_SLOT = 'Parking mjesto',
+export const Tag: Record<string, string> = {
+	PET_FRIENDLY: 'Pet-friendly',
+	SMOKING_ALLOWED: 'Pušenje dozvoljeno',
+	NEAR_STATION: 'Blizina stanice',
+	PARKING_SLOT: 'Parking mjesto',
 }
+
+export const tags = Object.keys(Tag).map((key) => Tag[key]);
 
 export const PartOfTown: Record<string, string> = {
 	TRESNJEVKA:'Trešnjevka',
@@ -17,36 +20,32 @@ export const PartOfTown: Record<string, string> = {
 
 export const partsOfTown = Object.keys(PartOfTown).map((key) => PartOfTown[key]);
 
-interface Coordinate {
+export interface Coordinate {
 	lat: number;
 	lng: number;
 }
 
-interface ApartmentServiceModel {
-	id: string;
-	data: firebase.firestore.DocumentData;
-}
-
 class ApartmentVM {
 	id: string;
-	title: string;
+	title: string; // rj
 	coordinates: Coordinate;
-	partOfTown: typeof PartOfTown;
-	street: string;
-	streetNumber: number;
-	description?: string;
+	partOfTown: string; // rj
+	street: string; // rj
+	streetNumber: number; // rj
+	description?: string; // rj
 	images: string[];
-	tags: Tag[];
-	area: number;
+	tags?: string[]; // rj
+	area: number; // rj
 	createdAt: string;
-	price: number;
+	price: number; // rj
 	// comments?: string[];
-	contactNumber: string;
-	roomCount: number;
-	bathroomCount: number;
-	availableFrom: string;
+	contactNumber: string; // rj
+	roomCount: number; // rj
+	bathroomCount: number; // rj
+	availableFrom: string; // rj
+	createdBy: string;
 
-	constructor(serviceData :ApartmentServiceModel) {
+	constructor(serviceData: ApartmentServiceModel) {
 		const { id, data } = serviceData;
 		const {
 			title,
@@ -64,23 +63,25 @@ class ApartmentVM {
 			roomCount,
 			bathroomCount,
 			availableFrom,
+			createdBy,
 		} = data;
 		this.id = id;
 		this.title = title;
-		this.coordinates = { lat: coordinates._lat, lng: coordinates._long };
-		this.partOfTown = partOfTown;
+		this.coordinates = coordinates;
+		this.partOfTown = partOfTown as string;
 		this.street = street;
 		this.streetNumber = streetNumber;
 		this.description = description;
 		this.images = images;
-		this.tags = tags as Tag[];
+		this.tags = tags;
 		this.area = area;
-		this.createdAt = ApartmentVM.secondsToDateFormat(createdAt.seconds);
+		this.createdAt = format(new Date(createdAt), 'yyyy-MM-dd');
 		this.price = price;
 		this.contactNumber = contactNumber;
 		this.roomCount = roomCount;
 		this.bathroomCount = bathroomCount;
-		this.availableFrom = ApartmentVM.secondsToDateFormat(availableFrom.seconds);
+		this.availableFrom = format(new Date(availableFrom), 'yyyy-MM-dd');
+		this.createdBy = createdBy;
 	}
 
 
