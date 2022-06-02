@@ -20,6 +20,15 @@ export const subscribeUser = () => {
 
 export const unsubscribeUser = () => {
 	return navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-		return serviceWorkerRegistration.pushManager.getSubscription().then((subscription) => subscription?.unsubscribe())
+		return serviceWorkerRegistration.pushManager.getSubscription().then(async (subscription) => {
+			console.log(subscription);
+			const isSuccessful = await subscription?.unsubscribe();
+			console.log(isSuccessful);
+			if (isSuccessful) {
+				console.log('subscription u sw', subscription)
+				return subscription;
+			}
+			return null;
+		})
 	});
 }
