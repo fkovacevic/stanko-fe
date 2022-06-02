@@ -1,0 +1,7 @@
+@import '../../../constants/styles/sizes';
+
+.loading-user-apartment {
+    &__skeleton {
+        margin-bottom: $margin-xl;
+    }
+}
