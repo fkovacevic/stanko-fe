@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { enableIndexedDbPersistence } from 'firebase/firestore';
 
 require('firebase/auth');
 
@@ -15,4 +16,6 @@ firebase.initializeApp({
 });
 
 export const firebaseAuth = firebase.auth();
-export const firestore = firebase.firestore()
+const firestore = firebase.firestore();
+enableIndexedDbPersistence(firestore).then(() => console.log('uspjepšno')).catch((reason) => console.log(reason));
+export { firestore };
