@@ -2,7 +2,7 @@
 @import '../../../constants/styles/sizes';
 
 .custom-map-marker {
-    background-color: $col-blue;
+    background-color: $col-special;
     color: white;
     padding: $padding-xs;
     border-radius: $border-radius-s;
@@ -19,7 +19,7 @@
         bottom: -2px;
         left: 9px;
         border: 10px solid transparent;
-        border-top: 17px solid $col-blue;
+        border-top: 16px solid $col-special;
       }
 }
 
