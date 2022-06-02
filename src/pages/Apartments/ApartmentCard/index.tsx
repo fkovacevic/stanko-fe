@@ -10,6 +10,7 @@ import { RiMoneyEuroBoxFill } from 'react-icons/ri'
 import ApartmentVM from 'models/ApartmentVM';
 import './_apartmentCard.scss';
 import Tag from '../../../common/components/Tag';
+import useDeviceWidth from 'common/custom-hooks/useDeviceWidth';
 
 
 interface Props {
@@ -20,12 +21,16 @@ interface Props {
 const ApartmentCard = (props: Props) => {
 	const { apartment, onClick } = props;
 	const { images, area, bathroomCount, roomCount, price, partOfTown, tags } = apartment;
+	const deviceType = useDeviceWidth();
 
 	function onCardClick() {
 		onClick(apartment);
 	}
+
+	const cardWidth = (deviceType === 'MOBILE_WIDTH' || deviceType === 'TABLET_WIDTH') ? 12 : 6;
+
 	return (
-		<Grid xs={6} item className='apartment-card-container'>
+		<Grid xs={cardWidth} item className='apartment-card-container' style={{'marginBottom': '12px'}}>
 			<div className='apartment-card' onClick={onCardClick}>
 				<div className='apartment-card__carousel-wrapper'>
 					<Carousel autoPlay={false} IndicatorIcon={true} className='apartment-card__carousel' navButtonsAlwaysVisible>
@@ -44,10 +49,8 @@ const ApartmentCard = (props: Props) => {
 								<FaBed className='apartment-card__icon'/>
 							</Grid>
 						</Grid>
-						{tags?.map((tag) =>
-							<Grid key={tag} item xs={12} className='apartment-card__tags'>
-								<Tag tag={tag}/>
-							</Grid>
+						{tags?.map((tag, index) =>
+								<Tag tag={tag as string} key={index}/>
 						)}
 					</Grid>
 					<Grid item xs={6} >
