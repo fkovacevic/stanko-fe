@@ -2,13 +2,14 @@
 @import '../../../constants/styles/sizes';
 
 .apartment-card-container {
-	height: 40vh;
+	height: 36vh;
 }
 .apartment-card {
 	margin: $margin-m $margin-m $margin-m $margin-m;
-	border-radius: $border-radius-s;
+	border: 1px solid rgba(128, 128, 128, 0.144);
+	border-radius: $border-radius-l;
 	background-color: $col-light;
-	height: 300px;
+	height: 36vh;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 	&:hover {
 		box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
@@ -34,8 +35,8 @@
 	&__left {
 		display: flex;
 		justify-content: space-evenly;
-		align-items: center;
-		padding: $padding-m $padding-m 0 $padding-m;
+
+		padding: $padding-s $padding-m 0 $padding-m;
 	}
 	&__tags {
 		display: flex;
@@ -46,7 +47,26 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		padding: $padding-m $padding-m $padding-m 0;
+		padding: $padding-s $padding-s $padding-s 0;
 		font-size: $font-size-m;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.apartment-card-container {
+		height: 40vh;
+	}
+	.apartment-card {
+		height: 40vh;
+		margin: 0px;
+		margin-bottom: $margin-s;
+		&__left {
+			display: flex;
+			justify-content: space-evenly;
+			padding: $padding-m $padding-m $padding-m $padding-m;
+		}
+		&__right-row {
+			padding: $padding-m $padding-m $padding-m 0;
+		}
 	}
 }

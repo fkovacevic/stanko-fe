@@ -1,44 +1,45 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Chip, Grid } from '@material-ui/core';
 import { MdOutlinePets } from 'react-icons/md';
-import { FaBusAlt } from 'react-icons/fa';
+import { FaBusAlt, FaSmoking, FaParking } from 'react-icons/fa';
 
 import { Tag as TagEnum } from 'models/ApartmentVM';
 import './_tag.scss'
 
 interface Props {
-    tag: TagEnum;
+	tag: string;
+	onDelete? : () => void;
 }
 
 const Tag = (props: Props) => {
-    const { tag } = props;
-    let tagIcon = null;
-    let tagName = '';
-    let width = '';
-    switch (tag) {
-        case TagEnum.PET_FRIENDLY:
-            tagIcon = <MdOutlinePets />
-            tagName = tag;
-            width = '100px';
-            break;
-        case TagEnum.NEAR_STATION:
-            tagIcon = <FaBusAlt />
-            tagName = tag;
-            width = '120px';
-            break;
-        default:
-            break;
-    }
-    return (
-        <Grid container className='tag' zeroMinWidth style={{width}}>
-            <Grid item xs={2}>
-                {tagIcon}
-            </Grid>
-            <Grid item xs={10}>
-                {tagName}
-            </Grid>
-        </Grid>
-    );
+	const { tag, onDelete } = props;
+	let tagIcon = undefined;
+	let tagName = '';
+
+	switch (tag) {
+		case TagEnum.PET_FRIENDLY:
+			tagIcon = <MdOutlinePets />
+			tagName = tag;
+			break;
+		case TagEnum.NEAR_STATION:
+			tagIcon = <FaBusAlt />
+			tagName = tag;
+			break;
+		case TagEnum.SMOKING_ALLOWED:
+			tagIcon = <FaSmoking />
+			tagName = tag;
+			break;
+		case TagEnum.PARKING_SLOT:
+			tagIcon = <FaParking />
+			tagName = tag;
+			break;
+		default:
+			break;
+	}
+	return (
+		<div className='tag' >
+			<Chip icon={tagIcon} label={tagName} onDelete={onDelete}/>
+		</div>
+	);
 };
 
 export default Tag;

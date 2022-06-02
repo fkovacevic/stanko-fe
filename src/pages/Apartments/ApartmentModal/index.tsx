@@ -42,7 +42,8 @@ const ApartmentModal = (props: Props) => {
 
     return (
         <Dialog
-            open={open} onClose={onClose}
+            open={open}
+            onClose={onClose}
             aria-labelledby='modal-modal-title'
             aria-describedby='modal-modal-description'
             fullWidth

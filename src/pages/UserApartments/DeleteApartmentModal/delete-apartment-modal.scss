@@ -1,0 +1,43 @@
+@import '../../../constants/styles/colors';
+@import '../../../constants/styles/sizes';
+
+.delete-apartment-modal {
+	height: 30vh;
+	background-color: $col-light;
+
+	&__title {
+		padding: $padding-l;
+		font-size: $font-size-l;
+		border-bottom: 2px solid grey;
+		color: $col-red;
+	}
+
+	&__body {
+		padding: $padding-l;
+		font-size: $font-size-m;
+		color: $col-red;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		margin-top: 2vh;
+
+		&__title {
+			margin-left: $margin-s;
+			text-decoration: underline;
+		}
+
+		&__disclaimer {
+			color: black;
+			font-size: $font-size-m;
+			padding-top: $margin-l;
+		}
+	}
+
+	&__footer {
+		border-top: 2px solid grey;
+		display: flex;
+		justify-content: right;
+		padding: $padding-s $padding-l;
+	}
+}

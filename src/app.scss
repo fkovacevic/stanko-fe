@@ -9,5 +9,16 @@ html {
 	background-color: $col-lightest;
 	color: black;
 	font-family: 'Oxygen';
+	height: 100%;
+}
+body, #root {
+	margin: 0;
+	height: 100%;
 }
 
+.app-loading {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

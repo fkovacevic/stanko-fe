@@ -1,0 +1,34 @@
+@import '../../../constants/styles/colors';
+@import '../../../constants/styles/sizes';
+
+.apartment-list-item {
+	border: 1px solid $col-light;
+	border-radius: $border-radius-m;
+	padding: $padding-l;
+	background-color: $col-lighter;
+
+	&__edit {
+		color: $col-blue;
+		font-size: $font-size-l;
+		cursor: pointer;
+	}
+
+	&__delete {
+		color: $col-red;
+		margin-left: $margin-l;
+		font-size: $font-size-l;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.apartment-list-item {
+		&__edit {
+			font-size: $font-size-m;
+		}
+
+		&__delete {
+			font-size: $font-size-m;
+		}
+	}
+}

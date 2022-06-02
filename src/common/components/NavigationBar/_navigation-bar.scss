@@ -3,6 +3,9 @@
 
 .navigation-bar {
     padding: $padding-xl;
+    &--homepage {
+        background-color: $col-blue;
+    }
     &__logo-wrapper {
         display: flex;
         align-items: center;
@@ -17,18 +20,26 @@
         font-size: $font-size-l;
         margin-left: $margin-l;
         font-weight: bold;
+        > img {
+            height: 30px;
+        }
     }
-    &__options > button {
-        text-transform: lowercase;
-        font-size: $font-size-m;
-        margin-right: $margin-l;
-        border: 0px;
+    &__stanko-image {
+        height: 32px;
+        width: 32px;
     }
-    &__options > button:hover {
-        background-color: $col-lightest;
+    &__button {
+        .MuiButton-label {
+            text-transform: lowercase;
+            font-size: $font-size-m;
+            text-decoration: none;
+        }
+        border: 0;
     }
-    &__options > button::after{
-        background-color: $col-special;
+    &--button-homepage {
+        .MuiButton-label {
+            color: white;
+        }
     }
 
     &__hover-animation {
@@ -48,8 +59,11 @@
         transition: transform 0.25s ease-out;
       }
     &__hover-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    &__log-out-button {
+        color: $col-red;
     }
     &__menu {
         display: flex;

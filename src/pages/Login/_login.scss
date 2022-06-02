@@ -1,0 +1,154 @@
+@import '../../constants/styles/colors';
+@import '../../constants/styles/sizes';
+
+.login {
+	height: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-image: url('./static/blob-background-stanko.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+
+	&__stanko {
+		font-size: $font-size-xl;
+		font-weight: bold;
+	}
+
+	&__stanko-logo {
+		padding: $padding-xl;
+
+		>span>img {
+			height: 30px;
+			margin-left: $margin-l;
+		}
+	}
+
+	&__stanko-image {
+		height: 256px;
+		width: 256px;
+	}
+
+	&__form-container {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		&__input {
+			width: 300px;
+			margin-top: $margin-l;
+		}
+
+		&__input-icon {
+			color: black;
+		}
+
+		&__or {
+			font-weight: bold;
+			color: grey;
+			font-size: $font-size-m;
+			padding: $padding-l;
+			width: 90%;
+			overflow: hidden;
+			text-align: center;
+		}
+
+		&__or:before,
+		&__or:after {
+			background-color: grey;
+			content: "";
+			display: inline-block;
+			height: 1px;
+			position: relative;
+			vertical-align: middle;
+			width: 50%;
+		}
+
+		&__or:before {
+			right: 0.5em;
+			margin-left: -50%;
+		}
+
+		&__or:after {
+			left: 0.5em;
+			margin-right: -50%;
+		}
+
+		&__registration {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+			padding: $padding-m;
+			font-size: $font-size-s;
+
+			&__link {
+				margin-left: $margin-s;
+			}
+		}
+
+		&__button-wrapper {
+			>button {
+				background-color: white;
+				margin-top: $margin-m;
+
+				&:hover {
+					background-color: $col-light;
+				}
+			}
+		}
+
+		&__facebook-icon {
+			color: #4267B2;
+		}
+
+		&__button {
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+			width: 300px;
+
+			.MuiButton-label {
+				font-size: $font-size-m;
+				text-transform: initial;
+			}
+		}
+
+		&__login-button-wrapper {
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+			width: 300px;
+			background-color: $col-blue;
+			margin-top: $margin-l;
+			border-radius: $border-radius-s;
+			> button {
+                &:hover {
+                    background-color: lighten($col-blue, 5%);
+                }
+            }
+			.MuiButton-label {
+				font-size: $font-size-m;
+				text-transform: initial;
+				color: white;
+			}
+			.MuiButton-root.Mui-disabled {
+                color: white;
+                cursor: not-allowed;
+                pointer-events: inherit;
+				background-color: lighten(grey, 10%);
+                &:hover {
+                    background-color: lighten(grey, 20%);
+                }
+            }
+		}
+	}
+}

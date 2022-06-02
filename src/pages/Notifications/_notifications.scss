@@ -1,0 +1,133 @@
+@import '../../constants/styles/colors';
+@import '../../constants/styles/sizes';
+
+.notifications-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notifications {
+	width: 70%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $col-lighter;
+	border: 1px solid $col-light;
+	border-radius: $border-radius-xl;
+	background: linear-gradient(rgb(247, 236, 222, 0.1), rgb(247, 236, 222, 0.1)), url('./static/notification-image.svg');
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: right;
+	background-color: rgb(247, 236, 222);
+	contain: content;
+	opacity: 1;
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		padding: $padding-xxl;
+		margin-left: $margin-xl;
+		font-size: $font-size-xxl;
+		font-weight: bold;
+	}
+
+	&__part-of-town {
+		margin-left: 10%;
+
+		&__dropdown {
+			font-family: inherit;
+		}
+
+		&__label {
+			padding: $padding-m;
+			font-size: $font-size-l;
+			font-weight: bold;
+		}
+	}
+
+	&__slider-label {
+		margin-top: 5vh;
+		color: grey;
+		font-size: $font-size-m;
+	}
+
+	&__slider {
+		.MuiSlider-thumb {
+			color: black;
+			font-size: $font-size-l;
+		}
+
+		.MuiSlider-rail {
+			color: black;
+		}
+
+		.MuiSlider-track {
+			color: black;
+		}
+	}
+
+	&__save-button {
+		display: flex;
+
+		>button {
+			margin-top: 2vh;
+			background-color: $col-special;
+			color: white;
+			border-radius: $border-radius-l;
+			text-transform: capitalize;
+			font-size: $font-size-m;
+
+			&:hover {
+				background-color: lighten($col-blue, 5%);
+			}
+		}
+	}
+	&__turn-off {
+		padding-top: 4vh;
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+	}
+	&__switch-label {
+		color: $col-red;
+	}
+
+}
+
+@media only screen and (max-width: 1000px) {
+	.notifications {
+		width: 90%;
+		height: 80vh;
+		background-size: 100%;
+		background: $col-lighter;
+		&__title {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			font-size: $font-size-xl;
+			font-weight: bold;
+			padding: $padding-xl $padding-l;
+		}
+
+		&__part-of-town {
+			&__label {
+				margin-top: 8vh;
+			}
+		}
+
+		&__slider-label {
+			margin-top: 8vh;
+		}
+
+		&__save-button {
+			>button {
+				margin-top: 5vh;
+			}
+		}
+
+		&__turn-off {
+			padding-top: 5vh;
+		}
+	}
+}

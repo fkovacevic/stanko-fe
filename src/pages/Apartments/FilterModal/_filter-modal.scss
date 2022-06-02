@@ -1,0 +1,76 @@
+@import '../../../constants/styles/colors';
+@import '../../../constants/styles/sizes';
+
+.filter-modal {
+    height: auto;
+    width: 30vw;
+    background-color: $col-light;
+
+    &__title {
+        padding: $padding-l;
+        font-size: $font-size-l;
+        border-bottom: 3px solid grey;
+
+        &__close {
+            font-size: $font-size-m;
+            cursor: pointer;
+        }
+    }
+
+    &__slider-label {
+        font-size: $font-size-m;
+        color: grey;
+    }
+
+    &__row {
+        padding: $padding-l;
+    }
+
+    &__footer {
+        border-top: 2px solid grey;
+        box-shadow: 0px -1px 1px rgba(50, 50, 50, 0.50);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__delete-button {
+        padding: $padding-s;
+
+        >button {
+            background-color: $col-red;
+            color: white;
+            text-transform: capitalize;
+            font-size: $font-size-m;
+
+            &:hover {
+                background-color: lighten($col-red, 20%);
+            }
+        }
+    }
+
+    &__filter-button {
+        padding: $padding-s;
+
+        >button {
+            background-color: $col-special;
+            color: white;
+            text-transform: capitalize;
+            font-size: $font-size-m;
+
+            &:hover {
+                background-color: lighten($col-special, 20%);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .filter-modal {
+        width: 80vw;
+
+        &__footer {
+            justify-content: center;
+        }
+    }
+}

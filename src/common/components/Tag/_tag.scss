@@ -2,12 +2,30 @@
 @import '../../../constants/styles/sizes';
 
 .tag {
-    color: white;
-    font-size: $font-size-s;
-    background-color: $col-blue;
-    text-transform: uppercase;
-    border-radius: $border-radius-s;
-    margin-left: 15%;
-    margin-top: $margin-s;
-    padding: $padding-xs;
+    margin-left: $margin-l;
+    margin-top: $margin-m;
+    .MuiChip-root {
+        color: white;
+        font-size: $font-size-xs;
+        background-color: $col-special;
+        padding: $padding-s;
+        > svg{
+            font-size: $font-size-s;
+            color: white;
+            margin-right: $margin-s;
+        }
+        height: 24px;
+        &:focus {
+            color: white;
+            background-color: $col-blue;
+        }
+    }
+    .MuiChip-label {
+        color: white;
+        text-transform: uppercase;
+        padding: 2px;
+    }
+    .MuiChip-deleteIcon {
+        margin-left: $margin-s;
+    }
 }
