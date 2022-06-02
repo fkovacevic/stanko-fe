@@ -13,10 +13,11 @@ interface Props {
 
 const RequireAuth = (props: Props) => {
 	const { children } = props;
-	const { user } = useContext(AuthorizationContext);
+	const { user, isLoading } = useContext(AuthorizationContext);
 	let location = useLocation();
 
-	if (!user) {
+	if (!user && !isLoading) {
+		console.log(user, isLoading)
 		// Redirect them to the /prijava page, but save the current location they were
 		// trying to go to when they were redirected.
 		return <Navigate to="/prijava" state={{ from: location }} replace />;
