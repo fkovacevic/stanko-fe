@@ -1,0 +1,10 @@
+@import '../../constants/styles/sizes';
+
+.register {
+    &__title {
+        padding: $padding-l;
+        font-size: $font-size-xxl;
+        font-weight: bold;
+        margin-bottom: $margin-xl;
+    }
+}
