@@ -23,6 +23,13 @@
 	contain: content;
 	opacity: 1;
 
+	&__loading {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
 	&__title {
 		display: flex;
 		justify-content: space-between;
