@@ -59,7 +59,7 @@ self.addEventListener('push', (event) => {
 		icon: '/stanko-image-64.png',
 		vibrate: [100, 50, 100],
 		actions: [
-			{ action: 'check', title: 'Check changes' },
+			{ action: 'check', title: 'Pogledaj novosti' },
 		],
 		image: data.image,
 	};
