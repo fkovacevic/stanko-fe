@@ -38,10 +38,6 @@ registerRoute(
 
 registerRoute(
 	({ url }) => {
-		console.log(url.pathname.endsWith('.png')
-		|| url.pathname.endsWith('.svg')
-		|| url.pathname.endsWith('.jpg')
-		|| url.pathname.endsWith('.jpeg'), url.pathname);
 		return url.pathname.endsWith('.png')
 				|| url.pathname.endsWith('.svg')
 				|| url.pathname.endsWith('.jpg')
@@ -64,8 +60,9 @@ self.addEventListener('push', (event) => {
 		vibrate: [100, 50, 100],
 		actions: [
 			{ action: 'check', title: 'Check changes' },
-		]
-	  };
+		],
+		image: data.image,
+	};
 	  event.waitUntil(
 		self.registration.showNotification('Nova obavijest za Vaše preference', options)
 	  );
@@ -73,6 +70,6 @@ self.addEventListener('push', (event) => {
 
 self.addEventListener('notificationclick', (event) => {
 	if (event.action === 'check') {
-		self.clients.openWindow('/oglasi');
+		self.clients.openWindow('/stanovi');
 	}
 });

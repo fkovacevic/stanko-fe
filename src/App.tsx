@@ -68,15 +68,7 @@ const apartmentConverter = {
 }
 
 function App() {
-	// const signInWithGoogle = () => {
-	// 	const provider = new firebase.auth.GoogleAuthProvider();
-	// 	auth.signInWithPopup(provider).then((user) => console.log(user.user?.displayName));
-	// }
-	// const apartmentsRef = firestore.collection('apartments');
-	// const query = apartmentsRef.orderBy('title').limit(5).withConverter(apartmentConverter);
-	// const [apartments, isLoading, error] = useCollection(query);
-	// console.log(apartments?.docs.forEach((value) => console.log(value.data())));
-	const { user, isLoading } = useContext(AuthorizationContext);
+	const { isLoading } = useContext(AuthorizationContext);
 
 	return (
 		isLoading

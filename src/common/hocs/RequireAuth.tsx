@@ -17,7 +17,6 @@ const RequireAuth = (props: Props) => {
 	let location = useLocation();
 
 	if (!user && !isLoading) {
-		console.log(user, isLoading)
 		// Redirect them to the /prijava page, but save the current location they were
 		// trying to go to when they were redirected.
 		return <Navigate to="/prijava" state={{ from: location }} replace />;
